@@ -15,7 +15,7 @@
 using namespace std;
 
 const int nHistos = 10;
-const int analysed_files=0;
+const int analysed_files=1;
 
 //for FVanalysis_reaction_types_sk4.c option 0 for data and 1 for MC and NHistos = 10
 //for FVanalysis_sk4.c add option 2 tau neutrinos and Nhsitos=9
@@ -213,9 +213,9 @@ FVAnalysis_sk4_start::FVAnalysis_sk4_start(TTree *tree) : fChain(0)
     #ifdef SINGLE_TREE
       // The following code should be used if you want this class to access
       // a single tree instead of a chain
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/home/mk/Downloads/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.9.root");
+      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/home/mk/Documents/SK/analysis/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.9.root");
       if (!f || !f->IsOpen()) {
-         f = new TFile("/home/mk/Downloads/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.9.root");
+         f = new TFile("/home/mk/Documents/SK/analysis/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.9.root");
           cout<<"reading one SK4 data file"<<f->GetName()<<endl;
       }
       f->GetObject("osc_tuple",tree);
@@ -225,7 +225,7 @@ FVAnalysis_sk4_start::FVAnalysis_sk4_start(TTree *tree) : fChain(0)
       // The following code should be used if you want this class to access a chain
       // of trees.
       TChain * chain = new TChain("osc_tuple","");
-      chain->Add("/home/mk/Downloads/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.*.root/osc_tuple");
+      chain->Add("/home/mk/Documents/SK/analysis/expanded_fv/data/fcdt.sk4.19b.mrbdt-2020.*.root/osc_tuple");
 
        cout<<"reading chain SK4 data file "<<chain->GetName()<<endl;
       tree = chain;
@@ -239,9 +239,9 @@ FVAnalysis_sk4_start::FVAnalysis_sk4_start(TTree *tree) : fChain(0)
 #ifdef SINGLE_TREE
         // The following code should be used if you want this class to access
         // a single tree instead of a chain
-        TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/home/mk/Downloads/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.9.root");
+        TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/home/mk/Documents/SK/analysis/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.9.root");
         if (!f || !f->IsOpen()) {
-            f = new TFile("/home/mk/Downloads/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.9.root");
+            f = new TFile("/home/mk/Documents/SK/analysis/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.9.root");
             cout<<"reading one MC file"<<endl;
         }
         f->GetObject("osc_tuple",tree);
@@ -251,7 +251,7 @@ FVAnalysis_sk4_start::FVAnalysis_sk4_start(TTree *tree) : fChain(0)
         // The following code should be used if you want this class to access a chain
         // of trees.
         TChain * chain = new TChain("osc_tuple","");
-        chain->Add("/home/mk/Downloads/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.*.root/osc_tuple");
+        chain->Add("/home/mk/Documents/SK/analysis/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.*.root/osc_tuple");
         
         
         cout<<"reading chain file for SK4 MC"<<endl;
@@ -344,7 +344,7 @@ void FVAnalysis_sk4_start::Init(TTree *tree)
    fChain->SetBranchAddress("ip", &ip, &b_ip);
    fChain->SetBranchAddress("dprob", &dprob, &b_dprob);
    fChain->SetBranchAddress("dir", dir, &b_dir);
-    fChain->SetBranchAddress("pos", pos, &b_pos);
+    //fChain->SetBranchAddress("pos", pos, &b_pos);
    fChain->SetBranchAddress("amom", &amom, &b_amom);
    fChain->SetBranchAddress("path", &path, &b_path);
    fChain->SetBranchAddress("wall", &wall, &b_wall);

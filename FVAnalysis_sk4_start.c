@@ -132,9 +132,6 @@ void FVAnalysis_sk4_start::Loop()
     cout<<" number of nentries "<< nentries<<endl;
     
     
-    
-    
-    
     double ratio= data_livetime/mc_livetime;
     cout<<"ratio data/mc  = "<<ratio<<endl;
     
@@ -145,36 +142,24 @@ void FVAnalysis_sk4_start::Loop()
     for (Long64_t i=0; i<nentries;i++)
     {
         
-        
-        E->GetEntry(i);
-        
-        if(analysed_files==0) //data files
-        {
-     
         E->GetEntry(i);
         
         if(analysed_files==0) //data files
         {
             
                 mom_data->Fill(E->amom);
-           
-            
             
         }
            
-            
-            
             if(analysed_files==1)//MC files
             {
                 
                     mom_mc->Fill(E->amom);
             }
-            
-        
-   
-    }}
+
+    }
     
- TCanvas *c1 = new TCanvas("c1", "Momentum -data", 15,15,900,900);
+ TCanvas *c1 = new TCanvas("c1", "Momentum - MC", 15,15,900,900);
     
     c1->SetLeftMargin(0.05);
     c1->SetRightMargin(0.05);
@@ -184,6 +169,6 @@ void FVAnalysis_sk4_start::Loop()
     c1->Draw();
     
     c1->cd();
-    mom_data->Draw();
-    c1->Print(outfile_data);
+    mom_mc->Draw();
+    c1->Print(outfile_mc);
 }

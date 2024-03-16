@@ -176,3 +176,179 @@ root [21] osc_tuple->Draw("dir[0]", "", "")
 (long long) 1607
 
 //Different values for each coordinate
+
+
+
+
+
+
+
+
+
+
+mk@fedora:~/Documents/SK/analysis/expanded_fv/MC$ root -l fcmc.sk1.19b.mrbdt-2020.0.root
+root [0] 
+Attaching file fcmc.sk1.19b.mrbdt-2020.0.root as _file0...
+(TFile *) 0x3b89350
+root [5] osc_tuple->Print()
+******************************************************************************
+*Tree    :osc_tuple : tree build for SK osc analyses                         *
+*Entries :   187900 : Total =        36198322 bytes  File  Size =   20328514 *
+*        :          : Tree compression factor =   1.78                       *
+******************************************************************************
+*Br    0 :nn        : nn/I                                                   *
+*Entries :   187900 : Total  Size=     754149 bytes  File Size  =       5840 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression= 129.00     *
+*............................................................................*
+*Br    1 :nn_mctruth : nn_mctruth/I                                          *
+*Entries :   187900 : Total  Size=     754373 bytes  File Size  =       6032 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression= 124.93     *
+*............................................................................*
+*Br    2 :nring     : nring/I                                                *
+*Entries :   187900 : Total  Size=     754233 bytes  File Size  =      73356 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=  10.27     *
+*............................................................................*
+*Br    3 :ipnu      : ipnu/I                                                 *
+*Entries :   187900 : Total  Size=     754205 bytes  File Size  =     130540 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   5.77     *
+*............................................................................*
+*Br    4 :dirnu     : dirnu[3]/F                                             *
+*Entries :   187900 : Total  Size=    2261998 bytes  File Size  =    2094660 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+*Br    5 :pnu       : pnu/F                                                  *
+*Entries :   187900 : Total  Size=     754177 bytes  File Size  =     682296 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.10     *
+*............................................................................*
+*Br    6 :mode      : mode/I                                                 *
+*Entries :   187900 : Total  Size=     754205 bytes  File Size  =     205076 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   3.67     *
+*............................................................................*
+*Br    7 :ip        : ip/I                                                   *
+*Entries :   187900 : Total  Size=     754149 bytes  File Size  =      78331 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   9.62     *
+*............................................................................*
+*Br    8 :dprob     : dprob/F                                                *
+*Entries :   187900 : Total  Size=     754233 bytes  File Size  =       5913 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression= 127.42     *
+*............................................................................*
+*Br    9 :dir       : dir[3]/F                                               *
+*Entries :   187900 : Total  Size=    2261848 bytes  File Size  =    2094937 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   10 :amom      : amom/F                                                 *
+*Entries :   187900 : Total  Size=     754205 bytes  File Size  =     683761 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.10     *
+*............................................................................*
+*Br   11 :path      : path/F                                                 *
+*Entries :   187900 : Total  Size=     754205 bytes  File Size  =     698189 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   12 :wall      : wall/F                                                 *
+*Entries :   187900 : Total  Size=     754205 bytes  File Size  =     673971 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.12     *
+*............................................................................*
+*Br   13 :itype     : itype/I                                                *
+*Entries :   187900 : Total  Size=     754233 bytes  File Size  =     154848 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   4.87     *
+*............................................................................*
+*Br   14 :muedk     : muedk/I                                                *
+*Entries :   187900 : Total  Size=     754233 bytes  File Size  =      95394 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   7.90     *
+*............................................................................*
+*Br   15 :flxg      : flxg[3]/F                                              *
+*Entries :   187900 : Total  Size=    2261923 bytes  File Size  =    2072112 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.09     *
+*............................................................................*
+*Br   16 :flxgo     : flxgo[3]/F                                             *
+*Entries :   187900 : Total  Size=    2261998 bytes  File Size  =      17629 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression= 128.21     *
+*............................................................................*
+*Br   17 :flxh      : flxh[3]/F                                              *
+*Entries :   187900 : Total  Size=    2261923 bytes  File Size  =    2093793 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   18 :flxho     : flxho[3]/F                                             *
+*Entries :   187900 : Total  Size=    2261998 bytes  File Size  =    1632843 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.38     *
+*............................................................................*
+*Br   19 :weightx   : weightx/F                                              *
+*Entries :   187900 : Total  Size=     754289 bytes  File Size  =     613330 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.23     *
+*............................................................................*
+*Br   20 :ra        : ra/F                                                   *
+*Entries :   187900 : Total  Size=     754149 bytes  File Size  =       5840 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression= 129.00     *
+*............................................................................*
+*Br   21 :dec       : dec/F                                                  *
+*Entries :   187900 : Total  Size=     754177 bytes  File Size  =       5864 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression= 128.48     *
+*............................................................................*
+*Br   22 :time      : time[3]/F                                              *
+*Entries :   187900 : Total  Size=    2261923 bytes  File Size  =      17558 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression= 128.73     *
+*............................................................................*
+*Br   23 :date      : date[3]/F                                              *
+*Entries :   187900 : Total  Size=    2261923 bytes  File Size  =     902368 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   2.50     *
+*............................................................................*
+*Br   24 :oscweight3f : oscweight3f/F                                        *
+*Entries :   187900 : Total  Size=     754401 bytes  File Size  =     624668 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.21     *
+*............................................................................*
+*Br   25 :cp1p2oscweight3f : cp1p2oscweight3f/F                              *
+*Entries :   187900 : Total  Size=     754541 bytes  File Size  =     624041 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.21     *
+*............................................................................*
+*Br   26 :cp3p2oscweight3f : cp3p2oscweight3f/F                              *
+*Entries :   187900 : Total  Size=     754541 bytes  File Size  =     624220 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.21     *
+*............................................................................*
+*Br   27 :invoscweight3f : invoscweight3f/F                                  *
+*Entries :   187900 : Total  Size=     754485 bytes  File Size  =     620873 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.21     *
+*............................................................................*
+*Br   28 :true_lepmom : true_lepmom/F                                        *
+*Entries :   187900 : Total  Size=     754401 bytes  File Size  =     684671 *
+*Baskets :       24 : Basket Size=      32000 bytes  Compression=   1.10     *
+*............................................................................*
+*Br   29 :true_lepdir : true_lepdir[3]/F                                     *
+*Entries :   187900 : Total  Size=    2262448 bytes  File Size  =    2095045 *
+*Baskets :       71 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+root [1] osc_tuple->Draw("amom:dir", "nring == 1", "COLZ")
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+(long long) 464301
+root [2] osc_tuple->Draw("amom:dir", "nring == 1 && ip == 2", "COLZ")
+(long long) 194733
+root [3] osc_tuple->Draw("amom:dir", "nring == 1 && ip == 3", "COLZ")
+(long long) 269568
+root [4] osc_tuple->Draw("amom:dir", "nring == 1 && ip == 2", "COLZ")
+(long long) 194733
+root [5] osc_tuple->Draw("amom:dir", "nring == 1 && ip == 3", "COLZ")
+(long long) 269568
+root [6] osc_tuple->Draw("amom", "nring == 1 && ip == 3", "COLZ")
+(long long) 89856
+root [7] osc_tuple->Draw("amom>>h1(100, 0, 4000)", "nring == 1 && ip == 3", "COL(long long) 89856
+root [8] osc_tuple->Draw("amom>>h1(100, 0, 4000)", "nring == 1 && ip == 2", "COL(long long) 64911
+root [9] osc_tuple->Draw("amom>>h1(100, 0, 4000)", "nring == 1 && ip == 3", "COLZ")
+(long long) 89856
+root [10] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 3", "CO(long long) 89856
+root [11] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 2", "CO(long long) 64911
+root [12] osc_tuple->Draw("itype", "", "")
+(long long) 187900
+root [13] osc_tuple->Draw("itype:mode", "", "")
+(long long) 187900
+root [14] osc_tuple->Draw("itype:mode", "", "COLZ")
+(long long) 187900
+root [15] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mode == 1", "COLZ")
+(long long) 27892
+root [16] osc_tuple->Draw("dir>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mod(long long) 83676
+root [17] osc_tuple->Draw("pnu>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mod(long long) 27892
+root [18] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mo(long long) 27892
+root [19] osc_tuple->Draw("amom:wall", "nring == 1 && ip == 2 && mode == 1", "CO(long long) 27892
+root [20] osc_tuple->Draw("amom:dir", "nring == 1 && ip == 2 && mode == 1", "COL(long long) 83676
+root [21] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mode == 1", "COLZ")
+(long long) 27892
+root [22] osc_tuple->Draw("amom>>h1(100, 0, 1300)", "nring == 1 && ip == 2 && mode == 1 || mode == -1", "COLZ")
+
