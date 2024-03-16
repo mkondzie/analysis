@@ -1,0 +1,178 @@
+mk@fedora:~/Documents/SK/analysis/expanded_fv/data$ root -l fcdt.sk4.19b.mrbdt-2020.0.root 
+root [0] 
+Attaching file fcdt.sk4.19b.mrbdt-2020.0.root as _file0...
+(TFile *) 0x55e6b3e6a390
+root [1] osc_tuple->Draw("amom:path", "", "COLZ")
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+(long long) 5561
+root [2] osc_tuple->Draw("nn:nn_mctruth", "", "COLZ")
+(long long) 5561
+root [3] osc_tuple->Draw("amom:dir", "", "COLZ")
+(long long) 16683
+root [4] osc_tuple->Draw("wall:dir", "", "COLZ")
+(long long) 16683
+root [5] osc_tuple->Draw("wall:itype", "", "")
+(long long) 5561
+root [6] osc_tuple->Draw("wall:itype", "", "COLZ")
+(long long) 5561
+root [7] osc_tuple->Draw("wall:ringc", "", "COLZ")
+(long long) 5561
+root [8] osc_tuple->Draw("amom:wall", "", "COLZ")
+(long long) 5561
+root [9] osc_tuple->Print()
+******************************************************************************
+*Tree    :osc_tuple : tree build for SK osc analyses                         *
+*Entries :     5561 : Total =         2427822 bytes  File  Size =     173961 *
+*        :          : Tree compression factor =  14.11                       *
+******************************************************************************
+*Br    0 :nn        : nn/I                                                   *
+*Entries :     5561 : Total  Size=      22795 bytes  File Size  =       3067 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   7.28     *
+*............................................................................*
+*Br    1 :nn_mctruth : nn_mctruth/I                                          *
+*Entries :     5561 : Total  Size=      22835 bytes  File Size  =        212 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 105.31     *
+*............................................................................*
+*Br    2 :nring     : nring/I                                                *
+*Entries :     5561 : Total  Size=      22806 bytes  File Size  =       2320 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   9.62     *
+*............................................................................*
+*Br    3 :ipnu      : ipnu/I                                                 *
+*Entries :     5561 : Total  Size=      22801 bytes  File Size  =        206 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 108.35     *
+*............................................................................*
+*Br    4 :dirnu     : dirnu[3]/F                                             *
+*Entries :     5561 : Total  Size=      67454 bytes  File Size  =        620 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.00     *
+*............................................................................*
+*Br    5 :pnu       : pnu/F                                                  *
+*Entries :     5561 : Total  Size=      22796 bytes  File Size  =        205 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 108.87     *
+*............................................................................*
+*Br    6 :mode      : mode/I                                                 *
+*Entries :     5561 : Total  Size=      22801 bytes  File Size  =        206 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 108.35     *
+*............................................................................*
+*Br    7 :Ibound    : Ibound/I                                               *
+*Entries :     5561 : Total  Size=      22811 bytes  File Size  =        208 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 107.32     *
+*............................................................................*
+*Br    8 :ip        : ip/I                                                   *
+*Entries :     5561 : Total  Size=      22791 bytes  File Size  =       2360 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   9.46     *
+*............................................................................*
+*Br    9 :dprob     : dprob/F                                                *
+*Entries :     5561 : Total  Size=      22806 bytes  File Size  =        207 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 107.83     *
+*............................................................................*
+*Br   10 :dir       : dir[3]/F                                               *
+*Entries :     5561 : Total  Size=      67452 bytes  File Size  =      62125 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   11 :pos       : pos[3]/F                                               *
+*Entries :     5561 : Total  Size=      67440 bytes  File Size  =       6157 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression=  10.87     *
+*............................................................................*
+*Br   12 :amom      : amom/F                                                 *
+*Entries :     5561 : Total  Size=      22805 bytes  File Size  =      20280 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.10     *
+*............................................................................*
+*Br   13 :path      : path/F                                                 *
+*Entries :     5561 : Total  Size=      22805 bytes  File Size  =        206 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 108.35     *
+*............................................................................*
+*Br   14 :wall      : wall/F                                                 *
+*Entries :     5561 : Total  Size=      22805 bytes  File Size  =      19977 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.12     *
+*............................................................................*
+*Br   15 :itype     : itype/I                                                *
+*Entries :     5561 : Total  Size=      22810 bytes  File Size  =       4915 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   4.54     *
+*............................................................................*
+*Br   16 :muedk     : muedk/I                                                *
+*Entries :     5561 : Total  Size=      22806 bytes  File Size  =       3010 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   7.42     *
+*............................................................................*
+*Br   17 :flxg      : flxg[3]/F                                              *
+*Entries :     5561 : Total  Size=      67447 bytes  File Size  =        617 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.53     *
+*............................................................................*
+*Br   18 :flxgo     : flxgo[3]/F                                             *
+*Entries :     5561 : Total  Size=      67454 bytes  File Size  =        620 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.00     *
+*............................................................................*
+*Br   19 :flxh      : flxh[3]/F                                              *
+*Entries :     5561 : Total  Size=      67447 bytes  File Size  =        617 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.53     *
+*............................................................................*
+*Br   20 :flxho     : flxho[3]/F                                             *
+*Entries :     5561 : Total  Size=      67454 bytes  File Size  =        620 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.00     *
+*............................................................................*
+*Br   21 :weightx   : weightx/F                                              *
+*Entries :     5561 : Total  Size=      22816 bytes  File Size  =        209 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 106.81     *
+*............................................................................*
+*Br   22 :ringc     : ring/F                                                 *
+*Entries :     5561 : Total  Size=      22807 bytes  File Size  =      18667 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.20     *
+*............................................................................*
+*Br   23 :probms    : probms[5]/F                                            *
+*Entries :     5561 : Total  Size=     112027 bytes  File Size  =       1264 *
+*Baskets :        4 : Basket Size=      32000 bytes  Compression=  88.24     *
+*............................................................................*
+*Br   24 :prmslg    : prmslg[10][5]/F                                        *
+*Entries :     5561 : Total  Size=    1115953 bytes  File Size  =      18542 *
+*Baskets :       35 : Basket Size=      32000 bytes  Compression=  60.13     *
+*............................................................................*
+*Br   25 :ra        : ra/F                                                   *
+*Entries :     5561 : Total  Size=      22791 bytes  File Size  =        204 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 109.40     *
+*............................................................................*
+*Br   26 :dec       : dec/F                                                  *
+*Entries :     5561 : Total  Size=      22796 bytes  File Size  =        205 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 108.87     *
+*............................................................................*
+*Br   27 :time      : time[3]/F                                              *
+*Entries :     5561 : Total  Size=      67447 bytes  File Size  =        617 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.53     *
+*............................................................................*
+*Br   28 :date      : date[3]/F                                              *
+*Entries :     5561 : Total  Size=      67447 bytes  File Size  =        617 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 108.53     *
+*............................................................................*
+*Br   29 :oscweight3f : oscweight3f/F                                        *
+*Entries :     5561 : Total  Size=      22836 bytes  File Size  =        229 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  97.50     *
+*............................................................................*
+*Br   30 :cp1p2oscweight3f : cp1p2oscweight3f/F                              *
+*Entries :     5561 : Total  Size=      22861 bytes  File Size  =        218 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 102.44     *
+*............................................................................*
+*Br   31 :cp3p2oscweight3f : cp3p2oscweight3f/F                              *
+*Entries :     5561 : Total  Size=      22861 bytes  File Size  =        218 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 102.44     *
+*............................................................................*
+*Br   32 :invoscweight3f : invoscweight3f/F                                  *
+*Entries :     5561 : Total  Size=      22851 bytes  File Size  =        216 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 103.38     *
+*............................................................................*
+*Br   33 :true_lepmom : true_lepmom/F                                        *
+*Entries :     5561 : Total  Size=      22836 bytes  File Size  =        213 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression= 104.82     *
+*............................................................................*
+*Br   34 :true_lepdir : true_lepdir[3]/F                                     *
+*Entries :     5561 : Total  Size=      67496 bytes  File Size  =        638 *
+*Baskets :        3 : Basket Size=      32000 bytes  Compression= 104.99     *
+*............................................................................*
+root [10] .q
+
+
+root [19] osc_tuple->Draw("dir[2]", "", "")
+(long long) 1607
+root [20] osc_tuple->Draw("dir[1]", "", "")
+(long long) 1607
+root [21] osc_tuple->Draw("dir[0]", "", "")
+(long long) 1607
+
+//Different values for each coordinate

@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "TMVAMulticlassApplication.C": "cpp",
+    "TMVA_CNN_Classification.C": "cpp",
+    "fvanalysis_sk4_start.h": "c"
+  }
+}
