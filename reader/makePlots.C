@@ -1,6 +1,7 @@
 #include <TFile.h>
 #include <TTree.h>
 #include <TBranch.h>
+#include <TLeaf.h>
 #include <TH1F.h>
 #include <TStyle.h>
 #include <TCanvas.h>
@@ -97,33 +98,22 @@ void loadFile(TString filePath){
    
 }
 
-void makePlots(TString filePath = "/home/mk/Documents/SK/analysis/expanded_fv/MC/fcmc.sk4.19b.mrbdt-2020.all.root"){
+void makePlots(TString filePath = "fcmc.sk3.19b.mrbdt-2020.0.root"){
 
 	TFile *rootFile = new TFile(filePath, "READ");	
 	TTree *oscillationTuple;
 	rootFile->GetObject("osc_tuple", oscillationTuple);
 	
     TObjArray *branches = oscillationTuple->GetListOfBranches();
-    //TIter next(branches);
     TBranch *branch;
 
-    //while ((branch = (TBranch*)next())) {
       for(int i = 0; i < branches->GetSize(); i++){
         branch = static_cast<TBranch *>(branches->At(i));
         TString branchName = branch->GetName();
         
-        //  std::cout << "Branch name: " << branchName << std::endl;
-				//  Int_t nElements = branch->GetEntries();
-				//  std::cout << nElements << std::endl;
-
-				TCanvas *canvas = new TCanvas(branchName, branchName, 800, 600);
-
-        oscillationTuple->Draw(branchName, "", "");
-				TH1F *hist = (TH1F*)gPad->GetPrimitive("htemp"); 
-				setPlottingOptions(hist);
-        canvas->SaveAs("/home/mk/Documents/SK/analysis/reader/plots/" + branchName + ".pdf");
-
-        delete canvas;
+				auto leaf = branch->GetLeaf(branchName);
+        auto nDim = leaf->GetNdata();
+				std::cout << branchName << " " << nDim << std::endl;
 		}
 
 }
