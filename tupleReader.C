@@ -4,6 +4,9 @@
 #include <TH1F.h>
 #include <TStyle.h>
 #include <TTree.h>
+#include <TLine.h>
+
+
 
 void setPlottingOptions(TH1F *hist, TString title = "; cos#theta; counts") {
 
@@ -166,6 +169,10 @@ void tupleReader() {
 
   canvas->cd(4);
   muRatio->Draw("pe");
+  TLine *line = new TLine(-1, 1, 1, 1);
+  line->SetLineColor ( kBlack );
+  line->SetLineWidth (1);
+  line->Draw("same");
 
 
 }
