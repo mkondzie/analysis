@@ -87,13 +87,13 @@ void tupleReader() {
   dataFile->GetObject("osc_tuple", dataTuple);
 
   ///////////////////////////////////////
-  TString eDataCondition = "amom > 400 && wall > 100 && nring == 1 && ip == 2";
+  TString eDataCondition = "amom > 400 && wall > 200 && nring == 1 && ip == 2";
   TH1F *eDatahist = getAngleDistribution(dataTuple, eDataCondition);
   setPlottingOptions(eDatahist, "e data; cos#theta; counts"); //" + eDataCondition + "
 
   TString eMCCondition = 
-      "pnu > 0.4 && wall > 100 && nring == 1 && (mode == 1 || mode == -1) && "
-      "ip == 2 && (ipnu == 12 || ipnu == -12)";
+      "pnu > 0.4 && wall > 200 && nring == 1 && (mode == 1 || mode == -1) && "
+      "ip == 2 && (ipnu == 12 || ipnu == -12)"; //&& itype == 59
   TH1F *eMChistWeight = getAngleDistribution(mcTuple, eMCCondition);
   setPlottingOptions(eMChistWeight, "e-like " + eDataCondition + "; cos#theta; counts");
   eMChistWeight->Scale(eDatahist->Integral() / eMChistWeight->Integral());
@@ -109,7 +109,7 @@ void tupleReader() {
 
   TString muMCCondition =
       "pnu > 0.4 && wall > 100 && nring == 1 && (mode == 1 || mode == -1) && "
-      "ip == 3 && (ipnu == 14 || ipnu == -14)";
+      "ip == 3 && (ipnu == 14 || ipnu == -14)"; //&& itype == 63
   TH1F *muMChistWeight = getAngleDistribution(mcTuple, muMCCondition);
   setPlottingOptions(muMChistWeight, "#mu-like " + muDataCondition + "; cos#theta; counts"); //" + muMCCondition +"
   muMChistWeight->Scale(muDatahist->Integral() / muMChistWeight->Integral());
@@ -167,8 +167,5 @@ void tupleReader() {
   canvas->cd(4);
   muRatio->Draw("pe");
 
-  TCanvas *canvasR = new TCanvas("canvas2", "", 800, 600);
-  canvasR->SetTopMargin(0.2);
-  doubleRatio->Draw("pe");
 
 }
