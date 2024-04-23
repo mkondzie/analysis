@@ -42,6 +42,43 @@ template <typename T, typename P> T functionFormula(T *x, P *p) {
          p[3] * TMath::Power(*x, 2.5) + p[4] * TMath::Power(*x, 3);
 }
 
+void readParameters(TF1 *fittingFunction[], int lDetector, bool usePresetParameters = true, TString filename = "kal_bk_det_run_cal_si_02.dat"){
+    std::ifstream file(filename.Data());
+
+    if (!file.is_open() || usePresetParameters) {
+    fittingFunction[lDetector]->SetParameter(0, -0.025);
+    fittingFunction[lDetector]->SetParameter(1, 0.00018);
+    }
+
+    else{
+    TString line;
+    TString format("%d %lf %lf %lf %lf %lf %lf");
+
+    while (line.ReadLine(file)) {
+
+        Int_t lInitial;
+        Double_t initialA, initialB, initialC, initialD, initialE, initialK;
+
+        if (sscanf(line.Data(), format.Data(), &lInitial, &initialA,
+        &initialB, &initialC, &initialD, &initialE, &initialK) != 7) {
+            if (file.tellg() != 0) {  // not the beginning of the file
+                std::cerr << "Error reading line: " << line << std::endl;
+            }
+            continue;
+        }
+
+     if(lInitial == lDetector){
+        fittingFunction[lDetector]->SetParameter(0, initialA);
+        fittingFunction[lDetector]->SetParameter(1, initialB);
+        fittingFunction[lDetector]->SetParameter(2, initialC);
+        fittingFunction[lDetector]->SetParameter(3, initialD);
+        fittingFunction[lDetector]->SetParameter(4, initialE);}
+
+    }
+
+    file.close();}
+    }
+
 void calibrationSi() {
 
   std::vector<int> workingDetectors = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15};
@@ -184,12 +221,6 @@ void calibrationSi() {
       pos[j] = xpeaks[l][inds[j]];
     }
     std::cout << "---------------" << std::endl;
-    //-----------------------
-
-    // fChVeryk[l] = new TF1(Form("fChVeryk%i", l),
-    //                       "[0]+[1]*x+[2]*TMath::Power(x,2)+[3]*TMath::Power(x,"
-    //                       "2.5)+[4]*TMath::Power(x,3)",
-    //                       500, 4000);
     fChVeryk[l] = new TF1(Form("fChVeryk%i", l), functionFormula, 500, 4000, 5);
 
     ///////////////////////////
@@ -198,8 +229,13 @@ void calibrationSi() {
 
     // if (!file.is_open()) {
     // std::cerr << "Error opening file: " << filename << std::endl;
+
+/*
     fChVeryk[l]->SetParameter(0, -0.025);
     fChVeryk[l]->SetParameter(1, 0.00018);
+*/
+readParameters(fChVeryk, l, false);
+
     // }
 
     // TString line;
