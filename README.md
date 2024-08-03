@@ -10,6 +10,6 @@ During the SK-IV period (2008-2018), the Super-Kamiokande detector collected dat
 [Zenith angle distributions](https://github.com/mkondzie/analysis/blob/main/ZenithAngle.pdf)
 
 
-A deficit of upward-going $\nu_{\mu}$ events was observed, while $\nue$ events are almost the same as predicted without oscillations. The missing muon neutrinos can be explained by $\nu_{\mu} \rightarrow \nu_{\tau}$ oscillations, where $\nu_{\mu}$ change flavor to $\nutau$, which are undetectable in SK on an event-by-event basis. This evidence for neutrino oscillations was first published in 1998 by Super Kamiokande [Super Kamiokande](https://arxiv.org/abs/hep-ex/9807003). 
+A deficit of upward-going $\nu_{\mu}$ events was observed, while $\nu_e$ events are almost the same as predicted without oscillations. The missing muon neutrinos can be explained by $\nu_{\mu} \rightarrow \nu_{\tau}$ oscillations, where $\nu_{\mu}$ change flavor to $\nu_{\tau}$, which are undetectable in SK on an event-by-event basis. This evidence for neutrino oscillations was first published in 1998 by Super Kamiokande [Super Kamiokande](https://arxiv.org/abs/hep-ex/9807003). 
 
 
