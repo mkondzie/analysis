@@ -14,7 +14,7 @@
 #include <vector>
 
 // Mapping of mode enumeration to more legible interaction labels
-std::map<Int_t, TString>  mode_labels = {
+std::map<Int_t, TString> mode_labels = {
     // Charged-current
     {1, "CCQE"},
     {-1, "CCQE"},
@@ -73,8 +73,7 @@ std::map<Int_t, TString>  mode_labels = {
     {51, "NCEL (1p1h)"},
     {-51, "NCEL (1p1h)"},
     {52, "NCEL (1p1h)"},
-    {-52, "NCEL (1p1h)"}
-};
+    {-52, "NCEL (1p1h)"}};
 
 std::map<TString, TString> sample_labels = {
     {"CCnue", "#nu_{e} CC"},
@@ -89,11 +88,12 @@ std::map<TString, TString> sample_labels = {
 std::map<TString, TString> variable_labels = {
     {"merprmslg", "Most energetic ring PID"}};
 
-//std::vector<TString> samples = {"NC", "CCnutau", "CCnumu_numubar", "CCnuebar", "CCnue"};
+// std::vector<TString> samples = {"NC", "CCnutau", "CCnumu_numubar", "CCnuebar", "CCnue"};
 
 // Function to set plotting options for each histogram
 template <typename T>
-void set_plotting_options(T *hist, TString variable_name = "", int color = 0) {
+void set_plotting_options(T *hist, TString variable_name = "", int color = 0)
+{
   TString title = ";" + variable_labels[variable_name] + "; events";
   hist->SetTitle(title);
   hist->SetLineColor(color);
@@ -102,7 +102,9 @@ void set_plotting_options(T *hist, TString variable_name = "", int color = 0) {
 }
 
 // Function to set plotting options for each stack
-template <> void set_plotting_options<THStack>(THStack *stack, TString, int) {
+template <>
+void set_plotting_options<THStack>(THStack *stack, TString, int)
+{
   stack->GetXaxis()->CenterTitle(true);
   stack->GetYaxis()->CenterTitle(true);
   stack->GetYaxis()->SetNdivisions(505, 4);
@@ -118,7 +120,8 @@ template <> void set_plotting_options<THStack>(THStack *stack, TString, int) {
   stack->GetYaxis()->SetLabelSize(0.035);
 }
 
-std::pair<float, float> find_min_max_X(TTree *tree, TString variable_name) {
+std::pair<float, float> find_min_max_X(TTree *tree, TString variable_name)
+{
   tree->Draw(variable_name);
   TH1F *htemp = (TH1F *)gPad->GetPrimitive("htemp");
   float max = htemp->GetXaxis()->GetBinUpEdge(htemp->GetNbinsX());
@@ -129,7 +132,8 @@ std::pair<float, float> find_min_max_X(TTree *tree, TString variable_name) {
   return std::make_pair(min, max);
 }
 
-Int_t find_n_bins(TTree *tree, TString variable_name) {
+Int_t find_n_bins(TTree *tree, TString variable_name)
+{
   tree->Draw(variable_name);
   TH1F *htemp = (TH1F *)gPad->GetPrimitive("htemp");
   Int_t n_bins = htemp->GetNbinsX();
@@ -139,7 +143,8 @@ Int_t find_n_bins(TTree *tree, TString variable_name) {
   return n_bins;
 }
 
-void plot_PID(TString sample="CCnue"){
+void plot_PID(TString sample = "CCnue")
+{
   TFile *file = new TFile("outfileAppMulti_sk4_ip.root", "READ");
   TTree *tree;
   file->GetObject(sample, tree);
@@ -148,34 +153,43 @@ void plot_PID(TString sample="CCnue"){
   tree->SetBranchAddress("merprmslg", &merprmslg);
   tree->SetBranchAddress("mode", &mode);
 
-tree->Draw("mode");
+  tree->Draw("mode");
   TH1F *htemp = (TH1F *)gPad->GetPrimitive("htemp");
 
-
-     std::vector<std::pair<Int_t, Float_t>> mode_frequencies;
-    for (int i = 1; i <= htemp->GetNbinsX(); ++i) {
-        Int_t mode_value = htemp->GetBinCenter(i); // Bin center gives the mode value
-        Float_t frequency = htemp->GetBinContent(i); // Bin content gives the frequency
-        if (frequency > 0) {
-            mode_frequencies.emplace_back(mode_value, frequency);
-        }
+  std::vector<std::pair<Int_t, Float_t>> mode_frequencies;
+  for (int i = 1; i <= htemp->GetNbinsX(); ++i)
+{
+    Int_t mode_value = htemp->GetBinCenter(i);  
+    if (mode_value <= 0)
+    {
+        mode_value -= 1; // Adjust mode value for negative modes
     }
-
-    // Sort the modes by frequency in descending order
-    std::sort(mode_frequencies.begin(), mode_frequencies.end(),
-              [](const auto &a, const auto &b) { return a.second > b.second; });
-
-    // Get the top 5 modes
-    std::vector<Int_t> top_modes;
-    for (size_t i = 0; i < 5 && i < mode_frequencies.size(); ++i) {
-        top_modes.push_back(mode_frequencies[i].first);
-        std::cout << "Mode: " << mode_frequencies[i].first
-                  << ", Frequency: " << mode_frequencies[i].second << std::endl;
+    Float_t frequency = htemp->GetBinContent(i); 
+    {if(frequency > 0)
+        mode_frequencies.push_back(std::make_pair(mode_value, frequency)); 
     }
-    
+}
 
+  // Sort the modes by frequency in descending order
+  std::sort(mode_frequencies.begin(), mode_frequencies.end(),
+            [](const auto &a, const auto &b)
+            { return a.second > b.second; });
 
-// Double_t dominant_mode = tree->GetMaximum("mode");
-// tree->Draw("merprmslg",Form("mode==%f", dominant_mode),"");
+  // Get the top 5 modes
+  std::vector<Int_t> top_modes;
+  for (size_t i = 0; i < 5 && i < mode_frequencies.size(); ++i)
+  {
+    top_modes.push_back(mode_frequencies[i].first);
+  }
 
+  std::vector<std::pair<Int_t, Float_t>> mode_percentages;
+  for (size_t i = 0; i < mode_frequencies.size(); ++i)
+  {
+    mode_percentages.push_back(std::make_pair(mode_frequencies.at(i).first, mode_frequencies.at(i).second / htemp->GetEntries()));
+   std::cout << "Mode: " << mode_frequencies[i].first
+              << ", Frequency: " << mode_frequencies[i].second << ", Percentage: " << mode_percentages.at(i).second * 100.0 << std::endl;
+  }
+
+  // Double_t dominant_mode = tree->GetMaximum("mode");
+  // tree->Draw("merprmslg",Form("mode==%f", dominant_mode),"");
 }
